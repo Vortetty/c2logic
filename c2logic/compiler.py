@@ -537,7 +537,7 @@ def get_include_path():
 
 def main(file, optimization = 0):
 	args = {
-		"file": file
+		"file": file,
 		"optimization_level": optimization
 	}
 	print(Compiler(args.optimization_level).compile(args.file), file=args.file+"masm"))
