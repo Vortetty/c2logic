@@ -540,7 +540,7 @@ def main(file, optimization = 0):
 		"file": file,
 		"optimization_level": optimization
 	}
-	print(Compiler(args.optimization_level).compile(args.file), file=args.file+"masm"))
+	print(Compiler(args.optimization_level).compile(args.file), file=args.file+"masm")
 
 if __name__ == "__main__":
 	main()
