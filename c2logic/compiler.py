@@ -536,11 +536,7 @@ def get_include_path():
 		raise ValueError(f"Unknown os {os.name}")
 
 def main(file, optimization = 0):
-	args = {
-		"file": file,
-		"optimization_level": optimization
-	}
-	print(Compiler(args.optimization_level).compile(args.file), file=args.file+"masm")
+	print(Compiler(optimization).compile(file), file=file+"masm")
 
 if __name__ == "__main__":
 	main()
