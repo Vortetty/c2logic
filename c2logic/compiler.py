@@ -535,14 +535,12 @@ def get_include_path():
 	else:
 		raise ValueError(f"Unknown os {os.name}")
 
-def main():
-	import argparse
-	parser = argparse.ArgumentParser()
-	parser.add_argument("file")
-	parser.add_argument("-O", "--optimization-level", type=int, choices=range(4), default=1)
-	parser.add_argument("-o", "--output", type=argparse.FileType('w'), default="-")
-	args = parser.parse_args()
-	print(Compiler(args.optimization_level).compile(args.file), file=args.output)
+def main(file, optimization = 0):
+	args = {
+		"file": file
+		"optimization_level": optimization
+	}
+	print(Compiler(args.optimization_level).compile(args.file), file=args.file+"masm"))
 
 if __name__ == "__main__":
 	main()
